@@ -14,12 +14,12 @@ export default function Home() {
         if (!user) {
             router.replace("/signin");
         } else {
-            setLoading(false); 
+            setLoading(false);
         }
     }, [user, router]);
 
     if (loading) {
-        return <div>Loading...</div>; 
+        return <div>Loading...</div>;
     }
 
     return (
