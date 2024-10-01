@@ -1,53 +1,36 @@
-import { GetServerSideProps } from "next";
-import { User } from "firebase/auth";
 import { getUser } from "@/actions/get-user";
+import { User } from "firebase/auth";
 
 interface UserPageProps {
     user: User | null;
     error?: string;
 }
 
-const UserPage = ({ user, error }: UserPageProps) => {
-    if (error) {
-        return <div className="error">{error}</div>;
-    }
-
-    if (!user) {
-        return <div>Redirecting...</div>; // Mostra un messaggio di redirect
-    }
-
-    return (
-        <div>
-            <h1>Welcome, {user.email}!</h1>
-            {/* Add user page content */}
-        </div>
-    );
-};
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export default async function UserPage() {
     try {
         const user = await getUser();
+        
         if (!user) {
-            return {
-                redirect: {
-                    destination: "/signin",
-                    permanent: false,
-                },
-            };
+            // Puoi gestire il reindirizzamento lato client
+            return (
+                <div>
+                    Redirecting to SignIn...
+                    {/* Reindirizzamento lato client */}
+                </div>
+            );
         }
-        return {
-            props: {
-                user,
-            },
-        };
-    } catch (error) {
-        return {
-            props: {
-                user: null,
-                error: 'An error occurred while fetching user data.',
-            },
-        };
-    }
-};
 
-export default UserPage;
+        return (
+            <div>
+                <h1>Welcome, {user.email}!</h1>
+                {/* Contenuto della pagina utente */}
+            </div>
+        );
+    } catch (error) {
+        return (
+            <div className="error">
+                An error occurred while fetching user data.
+            </div>
+        );
+    }
+}

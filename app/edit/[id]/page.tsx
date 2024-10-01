@@ -1,4 +1,3 @@
-// Aggiungi "use client" per segnalarlo come Client Component
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -93,16 +92,4 @@ export default function Edit({ params }: EditProps) {
       </div>
     </div>
   );
-}
-
-// Funzione per il fetching dei dati
-export async function getPerfumeParams(id: string) {
-  try {
-    const data = await getPerfumeDetail(id);
-    return { params: { id, perfume: data } };
-  } catch (error) {
-    return {
-      params: { id, error: "Perfume not found or error fetching data" },
-    };
-  }
 }
