@@ -1,36 +1,89 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Gestionale
 
-## Getting Started
+![License](https://img.shields.io/github/license/aniaBeninati/Gestionale)
+![GitHub last commit](https://img.shields.io/github/last-commit/aniaBeninati/Gestionale)
 
-First, run the development server:
+## Descrizione
+
+**Gestionale** è un progetto sviluppato per la gestione di attività o processi interni a un'organizzazione. Il software consente una gestione efficiente di dati e flussi di lavoro, permettendo agli utenti di monitorare e amministrare operazioni aziendali quotidiane con facilità.
+
+## Funzionalità principali
+
+- Gestione anagrafica dei clienti
+- Tracciamento ordini e fatturazione
+- Organizzazione e pianificazione delle risorse
+- Reportistica e statistiche personalizzabili
+- Dashboard interattiva per monitoraggio delle attività in tempo reale
+- Autenticazione e gestione utenti
+
+## Tecnologie utilizzate
+
+- **Frontend**: React/Next.js, TypeScript, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB/Firebase
+- **Autenticazione**: Firebase Authentication
+- **Hosting**: Vercel
+
+## Requisiti
+
+- Node.js (versione 14 o superiore)
+- NPM o Yarn
+- MongoDB (per il database locale o remoto)
+- Firebase (per l'autenticazione)
+
+## Installazione
+
+Segui questi passaggi per installare e avviare il progetto in locale:
+
+1. Clona il repository:
+    ```bash
+    git clone https://github.com/aniaBeninati/Gestionale.git
+    ```
+2. Vai nella cartella del progetto:
+    ```bash
+    cd Gestionale
+    ```
+3. Installa le dipendenze:
+    ```bash
+    npm install
+    ```
+    oppure
+    ```bash
+    yarn install
+    ```
+
+4. Crea un file `.env` e configura le tue variabili di ambiente:
+    ```bash
+    NEXT_PUBLIC_FIREBASE_API_KEY=your_firebase_api_key
+    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
+    NEXT_PUBLIC_FIREBASE_PROJECT_ID=your_firebase_project_id
+    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=your_firebase_storage_bucket
+    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_firebase_messaging_sender_id
+    NEXT_PUBLIC_FIREBASE_APP_ID=your_firebase_app_id
+    ```
+
+5. Avvia l'applicazione in modalità sviluppo:
+    ```bash
+    npm run dev
+    ```
+    oppure
+    ```bash
+    yarn dev
+    ```
+
+6. Visita l'applicazione nel browser all'indirizzo `http://localhost:3000`.
+
+## Struttura del progetto
+
+Ecco una panoramica dei file e delle cartelle principali del progetto:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Gestionale/
+│
+├── components/        # Componenti React utilizzati nell'app
+├── pages/             # Pagine gestite da Next.js
+├── public/            # File statici come immagini
+├── styles/            # File CSS/SCSS o Tailwind config
+├── utils/             # File di utilità (API, animazioni GSAP, ecc.)
+├── firebaseConfig.js  # Configurazione di Firebase
+└── README.md          # Documentazione del progetto
